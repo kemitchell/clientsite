@@ -5,6 +5,6 @@ var expiredCookie = (
 
 module.exports = function signOut(request, response) {
   response.statusCode = 303
-  response.setHeader('Set-Cookie', expiredCookie)
-  response.setHeader('Location', '/sign-in')
+  response.setHeader('set-cookie', expiredCookie)
+  response.setHeader('location', '/sign-in')
   response.end() }

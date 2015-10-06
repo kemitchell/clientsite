@@ -17,7 +17,7 @@ function userCookie(email) {
 
 function redirect(response, to) {
   response.statusCode = 303
-  response.setHeader('Location', to)
+  response.setHeader('location', to)
   response.end() }
 
 function post(request, response) {
@@ -42,7 +42,7 @@ function post(request, response) {
             response.end() }
           else {
             if (valid) {
-              response.setHeader('Set-Cookie', userCookie(email))
+              response.setHeader('set-cookie', userCookie(email))
               redirect(response, '/') }
             else {
               redirect(response, '/sign-in') } } }) } }) }

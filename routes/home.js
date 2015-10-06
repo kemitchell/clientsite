@@ -16,5 +16,5 @@ module.exports = function home(request, response) {
         fs.createReadStream('pages/index.html').pipe(tr) }
       else {
         response.statusCode = 303
-        response.setHeader('Location', '/sign-in')
+        response.setHeader('location', '/sign-in')
         response.end() } } }) }
