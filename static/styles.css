@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'X-Concourse';
+  src: url('./Concourse T6 Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'X-Concourse C';
+  src: url('./Concourse C6 Regular.woff') format('woff');
+}
+
+html, body {
+  font-family: 'X-Concourse';
+}
+
 .container {
   max-width: 1000px;
   margin: 14px auto;
