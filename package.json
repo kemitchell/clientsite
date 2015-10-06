@@ -1,0 +1,16 @@
+{
+  "name": "clients.kemitchell.com",
+  "private": true,
+  "dependencies": {
+    "http-hash": "^2.0.0",
+    "rfc6896": "^0.1.5",
+    "trumpet": "^1.7.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "tape test/*.test.js"
+  },
+  "devDependencies": {
+    "tape": "^4.2.1"
+  }
+}
