@@ -7,9 +7,9 @@ tape('GET /', function(test) {
   server(function(port, close) {
     http.get({ path: '/', port: port }, function(response) {
       test.equal(
-        response.statusCode, 200,
-        'GET / responds 202')
+        response.statusCode, 303,
+        'GET / responds 303')
       test.equal(
-        response.headers['content-type'], 'text/html',
-        'GET / serves HTML')
+        response.headers.location, '/sign-in',
+        'GET / redirects to sign in')
       close() }) }) })
