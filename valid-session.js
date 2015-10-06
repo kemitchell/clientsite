@@ -1,5 +1,6 @@
 var cookie = require('cookie')
 var scs = require('./scs')
+var readPasswords = require('./read-passwords')
 
 module.exports = function validSession(request, callback) {
   if ('cookie' in request.headers) {
@@ -12,7 +13,14 @@ module.exports = function validSession(request, callback) {
     catch (exception) {
       setImmediate(function() {
         callback(null, false) }) }
-    callback(null, true, decrypted) }
+    readPasswords(function(error, json) {
+      if (error) {
+        callback(error) }
+      else {
+        if (json.hasOwnProperty(decrypted)) {
+          callback(null, true, json[decrypted]) }
+        else {
+          callback(null, false) } } }) }
   else {
     setImmediate(function() {
       callback(null, false) }) } }

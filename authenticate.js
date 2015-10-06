@@ -1,13 +1,10 @@
-var fs = require('fs')
-
-var FILE = ( process.env.PASSWORDS_FILE || 'passwords.json' )
+var readPasswords = require('./read-passwords')
 
 module.exports = function authenticate(email, password, callback) {
-  fs.readFile(FILE, function(error, buffer) {
+  readPasswords(function(error, json) {
     if (error) {
       callback(error) }
     else {
-      var json = JSON.parse(buffer)
       var match = (
         ( email in json ) &&
         ( json[email] === password ) )

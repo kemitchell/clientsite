@@ -5,7 +5,7 @@ var querystring = require('querystring')
 var fs = require('fs')
 
 function get(request, response) {
-  response.setHeader('content-type', 'text/html')
+  response.setHeader('Content-Type', 'text/html')
   fs.createReadStream('pages/sign-in.html').pipe(response) }
 
 var COOKIE_OPTIONS = { maxAge: ( 60 * 60 * 24 ) }
