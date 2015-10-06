@@ -1,5 +1,5 @@
 {
-  "name": "clients.kemitchell.com",
+  "name": "client.kemitchell.com",
   "private": true,
   "dependencies": {
     "cookie": "^0.2.2",
