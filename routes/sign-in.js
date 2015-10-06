@@ -6,7 +6,7 @@ var fs = require('fs')
 
 function get(request, response) {
   response.setHeader('content-type', 'text/html')
-  fs.createReadStream('pages/login.html').pipe(response) }
+  fs.createReadStream('pages/sign-in.html').pipe(response) }
 
 var COOKIE_OPTIONS = { maxAge: ( 60 * 60 * 24 ) }
 
@@ -45,13 +45,13 @@ function post(request, response) {
               response.setHeader('Set-Cookie', userCookie(email))
               redirect(response, '/') }
             else {
-              redirect(response, '/login') } } }) } }) }
+              redirect(response, '/sign-in') } } }) } }) }
 
 function invalid(request, response) {
   response.statusCode = 405
   response.end() }
 
-module.exports = function login() {
+module.exports = function signIn() {
   var request = arguments[0]
   if (request.method === 'GET') {
     get.apply(this, arguments) }
