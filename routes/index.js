@@ -20,7 +20,6 @@ STATIC.forEach(function(file) {
       'application/font-woff' )
   router.set(( '/' + file ), function(request, response) {
     response.setHeader('Content-Type', mime)
-    console.log(path.join('static', file))
     fs.createReadStream(path.join('static', file)).pipe(response) }) })
 
 router.set('/', require('./home'))
