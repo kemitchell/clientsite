@@ -8,10 +8,7 @@ module.exports = function authenticate(email, password, callback) {
       callback(error) }
     else {
       var json = JSON.parse(buffer)
-      console.log(email, password)
-      console.log(json)
       var match = (
         ( email in json ) &&
         ( json[email] === password ) )
-      console.log(match)
       callback(null, match) } }) }
